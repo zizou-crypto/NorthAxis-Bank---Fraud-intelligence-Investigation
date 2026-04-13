@@ -64,7 +64,7 @@ Many of these bursts occur in under 5 minutes. For example, Account 7 completed 
 Technical Note: I used a floor-division logic on the transaction timestamp to create discrete 10-minute windows, allowing for efficient grouping without the performance overhead of complex self-joins.
 
 ![abornal spike](abnormal_trnx.PNG)
-![Off hours](Offhours_transactions.PNG)
+![Off hours](Offhours_transaction.PNG)
 
 --- off hours spikes and statistical outlier
  I calculated the Mean ($\mu$) and Standard Deviation ($\sigma$) for every account. The Z-Score formula $(x - \mu) / \sigma$ measures how many standard deviations a specific transaction is from the average.
@@ -75,6 +75,8 @@ We see multiple different customer_key values (171, 239, 215, etc.) all transact
 ### 3. Customer risk profiling 
 Built behavioral baselines per customer and surfaced daviations from thheir own transactions history
 
+![Customer risk](Customer_risk.PNG)
+
 
 - Top-tier customers like Faith Smith and Comfort Khalid are transacting in 19 to 20 different countries within a single quarter. In AML (Anti-Money Laundering) terms, such high "Jurisdictional Velocity" is a primary red flag for layered money movement.
 - Massive Capital Concentration: The top 10 customers identified are each responsible for $1.4M to $2.2M in transactions over just three months.
@@ -83,6 +85,18 @@ Built behavioral baselines per customer and surfaced daviations from thheir own 
 Board ready summary of estimated exposure, top accounts recommended for freezing, channels to restrict and merchants to blacklist. 
 
 ### Key findings summary
+| Customer name | Total amount Q3 | Countries Visited | Risk priority |
+| ---- | ---- | ---- | ---- | 
+| Faith Smith | $2.26M | 19 | Immediate Audit | 
+| Comfort Khalid | $1.6M | 20 | Immediate Audit | 
+
+-----
+
+| Analysis Type | Detection method | Risk identified | 
+| ---- | ---- | ---- |
+| Statistical | z score outlier | Individual spike didnt match history|
+| Temporal | Off hours monitoring | Burst of activity during midnights |
+
 
 ## Recommendations
 - Increase the "Risk Weight" for all off-hour mobile transactions originating from high-risk regions identified in the geographic clustering.
