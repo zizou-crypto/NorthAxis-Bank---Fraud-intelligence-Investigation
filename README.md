@@ -57,6 +57,10 @@ Although Web Banking has lower volume than Mobile, it maintains a significantly 
 Flagged rapid repeat transactions, off hours spikes and statistical outliers using z score analysis. 
 
 
+A significant portion of the flags are concentrated on two specific accounts: William Taylor (Account 4) and Peace Oduya (Account 7).
+Many of these bursts occur in under 5 minutes. For example, Account 7 completed 4 transactions in approximately 4 minutes (05:34 to 05:38). This level of speed is often a primary indicator fraud or theft. 
+
+
 ### 3. Customer risk profiling 
 Built behavioral baselines per customer and surfaced daviations from thheir own transactions history
 
