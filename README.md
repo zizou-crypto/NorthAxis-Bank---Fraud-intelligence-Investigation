@@ -15,6 +15,7 @@ high-risk accounts and delivering a data backed risk report to the executive tea
 - SQL server
 - Power BI (Visualization)
 - Github (Documentation)
+- Link to visualization page: [visualization](https://app.fabric.microsoft.com/groups/me/reports/5d91a66d-be9c-48ea-a494-59299f30ea5f/3a5329acab1835a2d409?experience=fabric-developer) 
 
 -----
 
@@ -107,6 +108,10 @@ Account Takeover (ATO) Specifics: I isolated 2,240 transactions ($5.8M) specific
 | ---- | ---- | ---- |
 | Statistical | z score outlier | Individual spike didnt match history|
 | Temporal | Off hours monitoring | Burst of activity during midnights |
+
+----
+Visualization
+![visuals](visualization_nab.PNG) 
 
 
 ## Recommendations
