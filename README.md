@@ -84,6 +84,17 @@ Built behavioral baselines per customer and surfaced daviations from thheir own 
 ### 4. Executive risk report
 Board ready summary of estimated exposure, top accounts recommended for freezing, channels to restrict and merchants to blacklist. 
 
+This project involved a comprehensive audit of over 71,000 transactions in Q3 2024 to identify operational trends and mitigate financial crime. By deploying advanced SQL analytics, I identified significant vectors of fraud and quantified the bank's total risk exposure.
+
+1. High-Level Performance & Exposure
+Total Volume: The system processed 71,984 transactions totaling $175.4M.
+
+System Flagging Rate: Approximately 18.3% of transactions (13,175) were flagged by internal rules, involving $14.5M in at-risk capital.
+
+Merchant & Country Risk: A significant portion of the risk is concentrated in specific areas, with $11.1M linked to high-exposure merchants and $9.1M originating from high-risk jurisdictions.
+
+Account Takeover (ATO) Specifics: I isolated 2,240 transactions ($5.8M) specifically showing patterns consistent with ATO behavior (rapid-fire bursts and credential testing).
+
 ### Key findings summary
 | Customer name | Total amount Q3 | Countries Visited | Risk priority |
 | ---- | ---- | ---- | ---- | 
