@@ -37,7 +37,7 @@ The analysis was conducted on a gold layer data warehouse with a star schema con
 ### 1. Transaction overview & Baseline KPIs
 Established what normal looks like before hunting anomalies 
 Volume, value, channel breakdown and daily trend across Q3 2024
-[!Daily transaction](Daily_transaction.png)
+![Daily transaction](Daily_transaction.png)
 
 
 ### 2. Anomaly detection & Velocity checks 
