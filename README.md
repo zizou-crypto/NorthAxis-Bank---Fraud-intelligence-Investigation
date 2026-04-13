@@ -56,10 +56,18 @@ Although Web Banking has lower volume than Mobile, it maintains a significantly 
 ### 2. Anomaly detection & Velocity checks 
 Flagged rapid repeat transactions, off hours spikes and statistical outliers using z score analysis. 
 
+![velocity checks](velocity_checks.PNG)
 
 A significant portion of the flags are concentrated on two specific accounts: William Taylor (Account 4) and Peace Oduya (Account 7).
 Many of these bursts occur in under 5 minutes. For example, Account 7 completed 4 transactions in approximately 4 minutes (05:34 to 05:38). This level of speed is often a primary indicator fraud or theft. 
 
+Technical Note: I used a floor-division logic on the transaction timestamp to create discrete 10-minute windows, allowing for efficient grouping without the performance overhead of complex self-joins.
+
+--- off hours spikes and statistical outlier
+ I calculated the Mean ($\mu$) and Standard Deviation ($\sigma$) for every account. The Z-Score formula $(x - \mu) / \sigma$ measures how many standard deviations a specific transaction is from the average.
+Key Finding: Every transaction shown in the results has a Z-Score > 3.0. In statistics, any value over 3.0 is considered a high-intensity outlier.Case Study: Customer Lanre Osei (Account 5114) has an average transaction of $348, but triggered an alert with a $1,985 transaction (Z-Score of 3.43). This represents a nearly 600% increase over his typical behavior, a possible classic red flag for card theft.
+
+We see multiple different customer_key values (171, 239, 215, etc.) all transacting from the same country during the same "dead of night" hours. This strongly suggests a  compromised mobile gateway rather than independent, legitimate user activity.
 
 ### 3. Customer risk profiling 
 Built behavioral baselines per customer and surfaced daviations from thheir own transactions history
