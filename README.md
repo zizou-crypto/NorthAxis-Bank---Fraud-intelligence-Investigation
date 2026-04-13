@@ -47,6 +47,7 @@ With 30,769 transactions, Mobile Banking accounts for the highest volume of acti
 Although Web Banking has lower volume than Mobile, it maintains a significantly higher Average Transaction Value ($3,241). This suggests that customers prefer the web interface for larger, more complex financial movements. Most failed transactions occured during transaction with over 800 transactions while the least transaction that happened with POS payment and it was reversed with 292 transactions. 
 
 | Metrics | Top performer | Insights | 
+| ------ | ------ | ------- |
 | highest Volume | Mobile banking | 30.7K TRNX|
 | Highest avg spend | Web | $3,241/TRNX |
 | Highest Daily revenue | 2024-08-27 | $1.52M | 
