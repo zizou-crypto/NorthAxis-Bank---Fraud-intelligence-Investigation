@@ -63,6 +63,9 @@ Many of these bursts occur in under 5 minutes. For example, Account 7 completed 
 
 Technical Note: I used a floor-division logic on the transaction timestamp to create discrete 10-minute windows, allowing for efficient grouping without the performance overhead of complex self-joins.
 
+![abornal spike](abnormal_trnx.PNG)
+![Off hours](Offhours_transactions.PNG)
+
 --- off hours spikes and statistical outlier
  I calculated the Mean ($\mu$) and Standard Deviation ($\sigma$) for every account. The Z-Score formula $(x - \mu) / \sigma$ measures how many standard deviations a specific transaction is from the average.
 Key Finding: Every transaction shown in the results has a Z-Score > 3.0. In statistics, any value over 3.0 is considered a high-intensity outlier.Case Study: Customer Lanre Osei (Account 5114) has an average transaction of $348, but triggered an alert with a $1,985 transaction (Z-Score of 3.43). This represents a nearly 600% increase over his typical behavior, a possible classic red flag for card theft.
@@ -72,7 +75,16 @@ We see multiple different customer_key values (171, 239, 215, etc.) all transact
 ### 3. Customer risk profiling 
 Built behavioral baselines per customer and surfaced daviations from thheir own transactions history
 
+
+- Top-tier customers like Faith Smith and Comfort Khalid are transacting in 19 to 20 different countries within a single quarter. In AML (Anti-Money Laundering) terms, such high "Jurisdictional Velocity" is a primary red flag for layered money movement.
+- Massive Capital Concentration: The top 10 customers identified are each responsible for $1.4M to $2.2M in transactions over just three months.
+
 ### 4. Executive risk report
 Board ready summary of estimated exposure, top accounts recommended for freezing, channels to restrict and merchants to blacklist. 
 
 ### Key findings summary
+
+## Recommendations
+- Increase the "Risk Weight" for all off-hour mobile transactions originating from high-risk regions identified in the geographic clustering.
+- Real-Time Alerts: Automated SMS "Did you perform this transaction?" messages should be triggered for any 1 AM - 4 AM activity exceeding $1,000.
+- Optimize Mobile UX: Given the high volume, any small friction in the Mobile Banking app has a massive impact on the majority of the user base.
