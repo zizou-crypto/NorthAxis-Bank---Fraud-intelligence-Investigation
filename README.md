@@ -38,6 +38,8 @@ The analysis was conducted on a gold layer data warehouse with a star schema con
 Established what normal looks like before hunting anomalies 
 Volume, value, channel breakdown and daily trend across Q3 2024
 ![Daily Transaction](Daily_transaction.PNG)
+![Transaction by Channel](Transaction.PNG)
+![Transaction type](Transaction_type.PNG)
 
 
 ### 2. Anomaly detection & Velocity checks 
